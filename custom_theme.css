@@ -1,0 +1,57 @@
+/* custom_theme.css — Medical Clean Theme */
+:root{
+  --bg-top: #f5fbff;
+  --bg-bottom: #e9f5ff;
+  --panel-bg: #ffffff;
+  --muted: #5b6b78;
+  --accent: #2b90ff;
+  --radius: 14px;
+}
+
+/* overall background */
+body, .gradio-container {
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom)) !important;
+  color: #0b2540 !important;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial !important;
+}
+
+/* header area */
+.header-markdown .app-header { display:flex; gap:16px; align-items:center; margin-bottom:18px }
+.header-markdown .logo img { width:56px; height:56px; border-radius:12px; object-fit:cover; box-shadow: 0 8px 24px rgba(43,144,255,0.12); }
+.header-markdown h1{ margin:0; font-size:20px; color:#083049 }
+.header-markdown .lead{ margin:0; color:var(--muted); font-size:13px }
+
+/* panels / groups */
+#left-panel, #stt-panel, #response-panel, #tts-panel, .gradio-container .group {
+  background: var(--panel-bg) !important;
+  border-radius: var(--radius) !important;
+  padding: 14px !important;
+  box-shadow: 0 10px 28px rgba(11,37,64,0.06) !important;
+  border: 1px solid rgba(43,144,255,0.06) !important;
+}
+
+/* image and audio boxes */
+#problem-image .input_image, .gradio-image, .gradio-audio {
+  border-radius: 12px !important;
+  border: 2px dashed rgba(11,37,64,0.04) !important;
+  background: linear-gradient(180deg,#fbfeff,#f6fbff) !important;
+  min-height: 340px !important;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* labels & text */
+label, .gr-text { color: var(--muted) !important; font-weight:600 !important; }
+.gr-box { color:#083049 !important; }
+
+/* buttons */
+#submit-btn { background: linear-gradient(90deg, var(--accent), #37b0ff) !important; color:white !important; border-radius:10px !important; box-shadow: 0 8px 20px rgba(43,144,255,0.12) !important; }
+#clear-btn { background: transparent !important; border:1px solid rgba(11,37,64,0.06) !important; color:var(--muted) !important; border-radius:10px !important; }
+
+/* outputs */
+#response-box textarea, #stt-box textarea { min-height:120px !important; background:#fbfeff !important; border-radius:10px !important; padding:12px !important; }
+
+/* responsive */
+@media (max-width: 760px) {
+  #main-row { flex-direction: column !important; }
+  .header-markdown .logo img { width:48px; height:48px; }
+}
